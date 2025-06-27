@@ -1,12 +1,42 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Hero, HeroService } from '../../services/hero.service';
+import { NgIf, NgStyle } from '@angular/common';
+declare global {
+  interface JQuery {
+    owlCarousel(options?: any): JQuery;
+  }
+}
 
 @Component({
   selector: 'app-hero',
-  standalone: true,
-  imports: [],
+  standalone:true,
+  imports:[NgStyle, NgIf],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  styleUrls: ['./hero.component.css']
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit {
 
+  @Input() paginaId!: number; // recebe a página como input
+  heroes: Hero[] = [];
+
+  constructor(private heroService: HeroService) {}
+
+  ngOnInit(): void {
+    if (this.paginaId) {
+      this.heroService.getHeroesByPagina(this.paginaId).subscribe({
+        next: (data) => {
+          this.heroes = data;
+          setTimeout(() => {
+            // Reativar carousel se estiver usando Owl
+            $('.welcome-slides').owlCarousel({
+              items: 1,
+              loop: true,
+              autoplay: true
+            });
+          }, 0);
+        },
+        error: (err) => console.error('Erro ao carregar heroes:', err)
+      });
+    }
+  }
 }
