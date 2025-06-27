@@ -1,16 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Hero, HeroService } from '../../services/hero.service';
-import { NgIf, NgStyle } from '@angular/common';
-declare global {
-  interface JQuery {
-    owlCarousel(options?: any): JQuery;
-  }
-}
+import { NgForOf, NgIf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
   standalone:true,
-  imports:[NgStyle, NgIf],
+  imports:[NgStyle, NgIf, NgForOf],
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })
