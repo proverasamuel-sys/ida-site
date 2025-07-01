@@ -1,4 +1,4 @@
-<section id="sobre" class="about-ministry-area section-padding-80-0 bg-white">
+<section id="sobre" class="about-ministry-area section-padding-80-0 bg-white py-5">
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-10">
@@ -9,17 +9,77 @@
       </div>
     </div>
 
-    <div class="row mb-80">
+    <!-- Texto institucional -->
+    <div class="row mb-4">
       <div class="col-12 col-lg-10">
-        <p class="lead text-justify">
-          O Ministério da Agricultura e Florestas é o órgão do Governo responsável pela formulação, execução e avaliação das políticas relacionadas com a agricultura, desenvolvimento rural, florestas, pecuária, segurança alimentar e gestão sustentável dos recursos naturais renováveis em Angola.
-        </p>
-        <p class="text-justify mt-4">
-          Entre suas atribuições, destacam-se o apoio técnico e institucional aos agricultores, a promoção da inovação tecnológica no campo, o fortalecimento da extensão rural, bem como a gestão de programas de incentivo à produção agrícola e florestal. O Ministério também atua na articulação com instituições internacionais, universidades e centros de pesquisa para o desenvolvimento sustentável do setor.
-        </p>
-        <p class="text-justify mt-4">
-          O Instituto de Desenvolvimento Agrário (IDA) é um dos órgãos executores ligados ao Ministério, focado em levar assistência técnica, formação e estrutura de apoio às comunidades rurais, promovendo a agricultura familiar, segurança alimentar e inclusão produtiva no meio rural.
-        </p>
+        <div  class="about-ministry-text">
+          <p>
+            O Ministério da Agricultura e Florestas, abreviadamente designado por <strong>MINAGRIF</strong>, é o Departamento Ministerial Auxiliar do Titular do Poder Executivo ao qual compete propor, formular, conduzir, executar, avaliar, controlar e fiscalizar as políticas do Executivo nos domínios da agricultura, pecuária, florestas, segurança alimentar e dos alimentos, numa perspectiva de desenvolvimento sustentável.
+          </p>
+        </div>
+      
+      </div>
+    </div>
+
+    <!-- Missão, Visão, Valores em Cards -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card-group gap-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Missão</h5>
+              <p class="card-text">
+                Formular, conduzir e supervisionar as políticas, programas e projectos agropecuários e florestais, com vista ao desenvolvimento de um sector capaz de garantir a segurança alimentar e contribuir para o desenvolvimento socioeconómico do país.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Visão</h5>
+              <p class="card-text">
+                Alcançar segurança alimentar e contribuir significativamente para o crescimento económico e desenvolvimento social do país. Tornar o sector agrário produtivo, competitivo e desenvolvido.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Valores</h5>
+              <ul class="card-text ps-3">
+                <li><strong>Sustentabilidade:</strong> Gestão sustentável dos recursos naturais.</li>
+                <li><strong>Inclusão:</strong> Promoção da igualdade e acesso aos serviços agrícolas.</li>
+                <li><strong>Transparência:</strong> Atuação ética e responsável.</li>
+                <li><strong>Inovação:</strong> Fomento à pesquisa e soluções tecnológicas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Atribuições com botão de ver mais -->
+    <div class="row">
+      <div class="col-12 col-lg-10">
+        <h3>Atribuições do Ministério da Agricultura</h3>
+        <div [ngClass]="{ 'read-more-content': true, 'expanded': atribuicoesExpanded }">
+          <ul>
+            <li>Formular e propor políticas e estratégias para o desenvolvimento agrícola, pecuário, florestal e alimentar;</li>
+            <li>Elaborar propostas para integrar o Plano de Desenvolvimento Nacional;</li>
+            <li>Executar políticas, programas e projectos nestes domínios;</li>
+            <li>Apoiar a produção, transformação e comercialização agropecuária e florestal;</li>
+            <li>Promover agricultura familiar e empresarial;</li>
+            <li>Gerir recursos hídricos para agricultura e planos de irrigação;</li>
+            <li>Melhorar a produtividade com base no progresso técnico;</li>
+            <li>Desenvolver infraestruturas de apoio à produção;</li>
+            <li>Fomentar agro-industrialização e extensão rural;</li>
+            <li>Cumprir obrigações regionais e internacionais ambientais e veterinárias;</li>
+            <li>Combater desertificação e incêndios florestais;</li>
+            <li>Proteger espécies vegetais e animais de doenças e pragas;</li>
+            <li>Promover pesquisa, inovação e autorizar importações/exportações agroflorestais.</li>
+          </ul>
+        </div>
+        <button class="read-more-button" (click)="toggleAtribuicoes()">
+          {{ atribuicoesExpanded ? 'Ver menos' : 'Ver mais' }}
+        </button>
       </div>
     </div>
   </div>
