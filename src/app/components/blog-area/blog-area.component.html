@@ -4,57 +4,39 @@
     <div class="row">
       <!-- Posts Area -->
       <div class="col-12 col-md-8">
-        <div class="posts-area">
+  <div class="posts-area">
 
-          <!-- Single Blog Post Area -->
-          <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="100ms">
-            <h6>Publicação em <a href="#" class="post-date">10 Maio 2025</a> / <a href="#" class="post-author">IDA
-                Angola</a></h6>
-            <a href="#" class="post-title">IDA lança novo programa de apoio aos pequenos agricultores</a>
-            <img src="assets/img/bg-img/produtor_rural.jpg" alt="" class="post-thumb">
-            <p class="post-excerpt">
-              O Instituto de Desenvolvimento Agrário (IDA) iniciou um programa nacional de capacitação para pequenos
-              agricultores com foco em tecnologias sustentáveis de cultivo e gestão de recursos hídricos.
-            </p>
-          </div>
+    <!-- Loop de publicações -->
+    <div
+      *ngFor="let item of news"
+      class="single-blog-post-area mb-50 wow fadeInUp"
+      data-wow-delay="100ms"
+    >
+      <h6>
+        Publicação em
+        <a href="#" class="post-date">{{ item.published_at | date: 'dd MMMM yyyy' }}</a>
+        /
+       
+      </h6>
+      <a href="#" class="post-title">{{ item.title }}</a>
+      <img [src]="item.imagem_url" alt="" class="post-thumb" />
+      <p class="post-excerpt">{{ item.excerpt }}</p>
+    </div>
 
-          <!-- Single Blog Post Area -->
-          <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="300ms">
-            <h6>Publicação em <a href="#" class="post-date">10 Maio 2025</a> / <a href="#" class="post-author">IDA
-                Angola</a></h6>
-            <a href="#" class="post-title">Parceria entre o IDA e cooperativas fortalece produção local</a>
-            <img src="assets/img/bg-img/parceria.png" alt="" class="post-thumb">
-            <p class="post-excerpt">
-              O IDA firmou parcerias com várias cooperativas agrícolas em províncias do interior para aumentar a
-              produção local e melhorar o escoamento da produção até os centros urbanos.
-            </p>
-          </div>
+  </div>
 
-          <!-- Single Blog Post Area -->
-          <div class="single-blog-post-area mb-50 wow fadeInUp" data-wow-delay="500ms">
-            <h6>Publicação em <a href="#" class="post-date">10 Maio 2025</a> / <a href="#" class="post-author">IDA
-                Angola</a></h6>
-            <a href="#" class="post-title">IDA promove formação sobre agricultura digital</a>
-            <img src="assets/img/bg-img/agriculture-formação.jpg" alt="" class="post-thumb">
-            <p class="post-excerpt">
-              A formação realizada pelo IDA abordou o uso de ferramentas digitais como drones, sensores de solo e
-              aplicativos móveis para modernizar a agricultura angolana e aumentar a produtividade.
-            </p>
-          </div>
+  <!-- Paginação (pode ser dinâmica se quiser) -->
+  <nav>
+    <ul class="pagination wow fadeInUp" data-wow-delay="900ms">
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-
-
-        </div>
-
-        <!-- pagination -->
-        <nav>
-          <ul class="pagination wow fadeInUp" data-wow-delay="900ms">
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-          </ul>
-        </nav>
-      </div>
 
       <!-- Sidebar Area -->
       <div class="col-12 col-md-4">
