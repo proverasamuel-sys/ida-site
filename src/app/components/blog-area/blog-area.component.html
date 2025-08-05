@@ -15,7 +15,7 @@
       <h6>
         Publicação em
         <a href="#" class="post-date">{{ item.published_at | date: 'dd MMMM yyyy' }}</a>
-        /
+        / {{item.author_name}}
        
       </h6>
       <a href="#" class="post-title">{{ item.title }}</a>
@@ -55,12 +55,9 @@
             <!-- Title -->
             <h5 class="widget-title">Categorias</h5>
             <ul class="cata-list">
-              <li><a href="#">Programas de Apoio</a></li>
-              <li><a href="#">Formação Técnica</a></li>
-              <li><a href="#">Agricultura Familiar</a></li>
-              <li><a href="#">Distribuição de Insumos</a></li>
-              <li><a href="#">Gestão de Recursos Hídricos</a></li>
-              <li><a href="#">Parcerias e Cooperação</a></li>
+             <li *ngFor="let categoria of categories">
+          <a href="#">{{ categoria.name }}</a>
+        </li>
             </ul>
           </div>
 
